@@ -1,0 +1,8 @@
+Välkommen till Ettans aftongala!
+
+Tack för att du fyllt i anmälan till Ettans aftongala. Mer information, ex. Zoom- och youtubelänk, inför kvällen kommer per mejl på lördag förmiddag.
+
+För att byta Zoom-rum i din anmälan trycker du här: {{ link }}
+
+
+Du får detta mejl i egenskap av användare av Fysiksektionens anmälningssystem nØllesystemet. Samtliga personuppgifter lagras enligt vår personuppgiftspolicy som återfinns här: https://f.kth.se/personuppgifterPersonuppgiftspolicy.

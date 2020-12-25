@@ -1,0 +1,29 @@
+{% extends "fkm_tg_anmalan/base-sites/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container-xl py-5">
+        <div class="bg-background-gray px-sm-5 py-5 px-4">
+
+            <div id="menu-buttons" class="d-flex justify-content-between mb-5">
+                <a href="{% url 'index' %}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Hem
+                </a>
+                <a href="{% get_media_prefix %}{{ site.files.menu_pdf }}" download>
+                    Ladda ned meny <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <h1 class="text-center pb-3 mb-5">{{ site.texts.title }}</h1>
+
+            <div class="d-flex text-center justify-content-center mb-5">
+                <div class="col-12 col-md-10 mb-3">
+                    {{ site.texts.intro|safe|linebreaks }}
+                </div>
+            </div>
+
+            <img class="img-fluid" src="{% get_media_prefix %}{{ site.images.menu }}" alt="" style="z-index: -1;"/>
+        </div>
+    </div>
+{% endblock %}

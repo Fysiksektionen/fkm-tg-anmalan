@@ -1,0 +1,20 @@
+{% extends "fkm_tg_anmalan/base-sites/base-content.html" %}
+
+{% load static crispy_forms_tags %}
+
+{% block content-indented %}
+    <div class="text-center">
+        <h1 class="my-5">Inloggningen misslyckades! :'(</h1>
+
+        <p class="my-5">
+            Troligen har det blivit fel på länken du försöker använda. Kontrollera att du har exakt den länk som är angiven i mejlet du fått.
+            Om det inte funkar, kontakta <a href="mailto:{{ SERVER_EMAIL }}">{{ SERVER_EMAIL }}</a>.
+        </p>
+
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-primary p-3 m-4" href="{% url "index" %}">
+                Till startsidan
+            </a>
+        </div>
+    </div>
+{% endblock %}

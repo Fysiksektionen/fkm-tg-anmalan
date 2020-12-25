@@ -1,0 +1,8 @@
+/project_administration/settings/config_files/db_info.cnf
+/project_administration/settings/config_files/mail.json
+/project_administration/settings/config_files/settings.json
+/*/migrations/*.py
+!/*/migrations/__init__.py
+/public/mediafiles/**
+/public/staticfiles/**
+!/**/.gitignore

@@ -1,0 +1,36 @@
+{% extends "fkm_tg_anmalan/base-sites/base-content.html" %}
+
+{% load static %}
+
+{% block title %}
+    <div class="text-center">
+        {{ site.texts.title }}
+    </div>
+{% endblock %}
+
+{% block content-spanning %}
+    <img class="img-fluid" src="{% get_media_prefix %}{{ site.images.banner }}" alt="" style="z-index: -1;"/>
+{% endblock %}
+
+{% block content-indented %}
+
+    <div class="d-flex justify-content-center mb-5">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="{{ site.texts.youtube_link|safe }}" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    {{ site.texts.valkommen_text|safe }}
+
+    <div class="text-center d-flex justify-content-around m-5">
+        <a class="btn btn-primary p-3 px-5 mt-5" href="{% url "rum" %}">
+            Anmäl dig här!
+        </a>
+    </div>
+
+    <div class="text-center d-flex justify-content-around m-5">
+        <a class="btn btn-primary p-3 px-5" href="{% url "meny" %}">
+            Till menyn
+        </a>
+    </div>
+{% endblock %}
