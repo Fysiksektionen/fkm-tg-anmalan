@@ -3,6 +3,7 @@ from crispy_forms.layout import Layout, Row, Column, Submit, Hidden, Field
 from django import forms
 from django.apps import apps
 from django.conf import settings
+from django.forms.widgets import RadioSelect
 
 import fkm_tg_anmalan.models as models
 
@@ -20,7 +21,9 @@ class SignUpForm(forms.ModelForm):
             Row(Column('email'), Column()),
             Row(Column('year'), Column()),
             Row(Column('gyckla')),
-            Field('gyckel_comment')
+            Field('gyckel_comment', rows=2),
+            Row(Column('patch')),
+            Row(Column('on_photo'))
         )
         if ('initial' in kwargs and 'room' in kwargs['initial']):
             helper.layout.append(Hidden('room', kwargs['initial']['room']))
@@ -33,7 +36,8 @@ class SignUpForm(forms.ModelForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['email'].required = True
-        self.fields['gyckla'].required = True
 
-        self.fields['email'].required = True
+        self.fields['gyckla'].widget = RadioSelect()
+        self.fields['gyckla'].required = True
+        self.fields['gyckla'].initial = None
 

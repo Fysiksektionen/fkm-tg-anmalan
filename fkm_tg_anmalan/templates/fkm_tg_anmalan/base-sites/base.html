@@ -1,8 +1,14 @@
 {% extends "fkm_tg_anmalan/base-sites/root.html" %}
 {% load static %}
 
-{% block metatitle %}Anmälan TG2{% endblock %}
+{% block metatitle %}Anmälan TG-HATT{% endblock %}
 
 {% block extrastyle %}
     <link rel="stylesheet" href={% static "fkm_tg_anmalan/scss/basestyle.css" %}>
+    <style>
+        body {
+            background-image: url("{% get_static_prefix %}resources/background.png");
+            background-repeat: repeat;
+        }
+    </style>
 {% endblock %}

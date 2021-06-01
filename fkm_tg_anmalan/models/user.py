@@ -18,16 +18,14 @@ class TGUser(AbstractUser):
     Extension class of Django user to add user type and unique url code.
     """
 
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'email']
-
     first_name = models.CharField(_('first name'), max_length=30, blank=False, null=False)
     last_name = models.CharField(_('last name'), max_length=150, blank=False, null=False)
     email = models.EmailField(_('email address'), blank=False, null=False, unique=True)
 
     year = models.CharField(
-        blank=True, null=True, max_length=15,
+        blank=False, null=False, max_length=15,
         verbose_name="Årskurs",
-        help_text="Endast för fysiker."
+        help_text="Ex. F-19"
     )
 
     room = models.ForeignKey(
@@ -37,7 +35,7 @@ class TGUser(AbstractUser):
     )
 
     gyckla = models.BooleanField(
-        null=False, default=0,
+        null=False, default=False, choices=[(True, 'Ja'), (False, 'Nej')],
         verbose_name="Jag vill gyckla under kvällen"
     )
     gyckel_comment = models.TextField(
@@ -48,7 +46,7 @@ class TGUser(AbstractUser):
     )
 
     on_photo = models.BooleanField(
-        null=False, default=0,
+        null=False, default=False,
         verbose_name="Jag accepterar att vara med på foton från kvällen.",
         help_text="Under det här arrangemanget tar vi bilder som sparas och sedan publiceras offentligt via "
                   "Fysiksektionens kommunikationskanaler. Om du motsätter dig denna behandling kan vi komma att "
@@ -59,8 +57,8 @@ class TGUser(AbstractUser):
 
     patch = models.BooleanField(
         null=False, default=False,
-        verbose_name="Jag vill köpa ett märke (15 kr)",
-        help_text="Genom att fyll i detta först jag att jag är betalningsskyldig för detta märke."
+        verbose_name="Jag vill köpa ett märke (20 kr)",
+        help_text="Genom att fylla i detta förstår jag att jag är betalningsskyldig för detta märke."
     )
 
     got_login_details = models.BooleanField(verbose_name="Har fått inloggningsdetaljer", null=False, default=False)
@@ -98,10 +96,7 @@ class TGUser(AbstractUser):
     @property
     def user_tag(self):
         if self.year:
-            if self.year < 14:
-                return "F-Gammal"
-            else:
-                return "F-%02d" % self.year
+            return self.year
         else:
             return "Extern"
 
@@ -120,6 +115,16 @@ def init_auto_fields(sender, instance, **kwargs):
 def check_room_status(sender, instance, **kwargs):
     if 0 not in [room.attendees.count() for room in Room.objects.all()]:
         room = Room()
+        all_room_names = Room.objects.all().values_list('name', flat=True)
+        for special_name in settings.ROOM_NAMES:
+            if special_name not in all_room_names:
+                room.name = special_name
+                break
+        else:
+            i = 1
+            while not room.name:
+                if ("Rum %d" % i) not in all_room_names:
+                    room.name = "Rum %d" % i
         room.save()
 
 

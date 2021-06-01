@@ -1,8 +1,17 @@
-Välkommen till Ettans aftongala!
+Välkommen till TG-HATT!
 
-Tack för att du fyllt i anmälan till Ettans aftongala. Mer information, ex. Zoom- och youtubelänk, inför kvällen kommer per mejl på lördag förmiddag.
+Vi i klubbmästeriet är saligt taggade över att just DU vill gå på år 2021:s första tentagasque! Denna gasque kommer att ha en lite speciell utformning i jämförelse med de du är van vid, men det finns vissa saker vi inte tummar på, en av dessa är gyckel! Då schemat kommer se lite annorlunda ut är det extra viktigt att du anmäler gyckel i förväg för att vi ska få ihop det med den digitala logistiken på ett så smidigt sätt som möjligt.
 
-För att byta Zoom-rum i din anmälan trycker du här: {{ link }}
+Temat denna eminenta afton kommer vara inget mindre än Hatt-tema! Under kvällen kommer ni att delas in i lag som kommer tävla i en poängjakt som kommer löpa parallellt med själva sittningen. Vi kommer även att utse kvällens bästa hatt så det är extra viktigt att klä sig med omsorg och eftertanke!
+
+För att byta Ändra i din anmälan trycker du här: {{ link }}. Där kan du exempelvis anmäla gyckel eller byta rum genom att redigera din anmälan.
+
+Har du fyllt i att du vill ha ett märke? Det kostar 20kr och betalning sker till fkm*s bankgiro 5942-8219 senast 15/01, skriv “TG2 förnamn efternamn” i meddelandet.
+
+Zoom-rummet öppnar 19:20 och vi kör igång 19:30 på den här länken! https://kth-se.zoom.us/j/67544511237
+
+Vi ses då!<br>
+fkm* 2021
 
 
-Du får detta mejl i egenskap av användare av Fysiksektionens anmälningssystem nØllesystemet. Samtliga personuppgifter lagras enligt vår personuppgiftspolicy som återfinns här: https://f.kth.se/personuppgifterPersonuppgiftspolicy.
+Du får detta mejl i egenskap av användare av Fysiksektionens anmälningssystem till TG-HATT. Samtliga personuppgifter lagras enligt vår personuppgiftspolicy som återfinns här: https://f.kth.se/personuppgifter.

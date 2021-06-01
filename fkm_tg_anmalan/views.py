@@ -72,8 +72,9 @@ class SignUp(mixins.SiteMixin, FormView):
     def form_valid(self, form):
         user = form.instance
         user.save()
-        if not user.is_authenticated:
+        if not user.got_login_details:
             user.send_signup_email()
+        if not self.request.user.is_authenticated:
             auth_login(self.request, user)
 
         return super().form_valid(form)
@@ -102,12 +103,9 @@ def download(request):
         response['Content-Disposition'] = 'attachment; filename="anmalda.csv"'
 
         writer = csv.writer(response)
-        writer.writerow(['Name', 'Email', 'Year', 'Room'])
+        writer.writerow(['Namn', 'E-postadress', 'Årskurs', 'Rum', 'Märke', 'Gyckla', 'Gyckelkommentar', 'Med på bild'])
         for user in models.TGUser.objects.all():
-            writer.writerow([str(user), user.email, user.year, user.room])
-
-        print(response)
-
+            writer.writerow([str(user), user.email, user.year, user.room, user.patch, user.gyckla, user.gyckel_comment, user.on_photo])
         return response
     else:
         return HttpResponse()

@@ -13,7 +13,7 @@ import traceback
 import signal
 import sys
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_administration.settings.production')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_administration.settings')
 
 from django.core.wsgi import get_wsgi_application
 try:

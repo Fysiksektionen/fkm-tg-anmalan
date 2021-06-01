@@ -1,6 +1,6 @@
-from project_administration.settings.production import *
+from project_administration.settings.base import *
 
-TMP_PATH = os.path.abspath(os.path.join(PROJECT_ROOT, 'tmp'))
+TMP_PATH = PROJECT_ROOT / 'tmp'
 
 DEBUG = True
 CSRF_COOKIE_SECURE = False
